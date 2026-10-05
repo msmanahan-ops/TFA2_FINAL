@@ -12,3 +12,6 @@ $routes->get('users/new', 'UserAccounts::new');
 $routes->post('users', 'UserAccounts::create');
 $routes->get('users/(:num)/edit', 'UserAccounts::edit/$1');
 $routes->post('users/(:num)', 'UserAccounts::update/$1');
+$routes->get('login', 'Auth::login');
+$routes->post('login', 'Auth::attempt');
+$routes->post('logout', 'Auth::logout', ['filter' => 'auth']);
